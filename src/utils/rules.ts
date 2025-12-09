@@ -1,13 +1,13 @@
 import { Characteristics } from "../types/investigator";
 
 export function calculateMov(characteristics: Characteristics, age: number): number {
-  const { força, destreza, tamanho } = characteristics;
+  const { strength, dexterity, size } = characteristics;
 
   let baseMov = 8;
 
-  if (força < tamanho && destreza < tamanho){
+  if (strength < size && dexterity < size){
     baseMov = 7;
-  } else if (força > tamanho && destreza > tamanho) {
+  } else if (strength > size && dexterity > size) {
     baseMov = 9;
   }
 
@@ -31,7 +31,7 @@ export function calculateMov(characteristics: Characteristics, age: number): num
 }
 
 export function calculateBuild(characteristics: Characteristics): number {
-  const total = characteristics.força + characteristics.tamanho;
+  const total = characteristics.strength + characteristics.size;
 
   if (total <= 64) return -2;
   if (total <= 84) return -1;
@@ -46,7 +46,7 @@ export function calculateBuild(characteristics: Characteristics): number {
 }
 
 export function calculateHP(characteristics: Characteristics): number {
-  const total = characteristics.tamanho + characteristics.constituição;
+  const total = characteristics.size + characteristics.constitution;
 
   const maxHP = Math.floor(total / 10);
 
@@ -54,7 +54,7 @@ export function calculateHP(characteristics: Characteristics): number {
 }
 
 export function calculateMP(characteristics: Characteristics): number {
-  const power = characteristics.poder;
+  const power = characteristics.power;
 
   const maxMP = Math.floor(power / 5);
 
@@ -62,7 +62,7 @@ export function calculateMP(characteristics: Characteristics): number {
 }
 
 export function calculateDamageBonus(characteristics: Characteristics): string {
-  const total = characteristics.força + characteristics.tamanho;
+  const total = characteristics.strength + characteristics.size;
 
   if (total <= 64) return "-2";
   if (total <= 84) return "-1";

@@ -4,14 +4,14 @@ import { calculateBuild, calculateHP, calculateMov, calculateMP } from "../utils
 import { generateWeapons } from "../utils/combatHelpers";
 
 const madelynCharacteristics = {
-    força: 50,
-    constituição: 60,
-    destreza: 60,
-    inteligência: 80,
-    tamanho: 55,
-    poder: 60,
-    aparência: 65,
-    educação: 85
+    strength: 50,
+    constitution: 60,
+    dexterity: 60,
+    intelligence: 80,
+    size: 55,
+    power: 60,
+    appearance: 65,
+    education: 85
 }
 
 const madelynAge = 29
@@ -51,13 +51,13 @@ export const MADELYN_BROWN: Investigator = {
   },
   characteristics: {
     ...madelynCharacteristics,
-    movimento: calculateMov(madelynCharacteristics, madelynAge),
-    corpo: calculateBuild(madelynCharacteristics)
+    move: calculateMov(madelynCharacteristics, madelynAge),
+    build: calculateBuild(madelynCharacteristics)
   },
   status: {
     hitPoints: { current: 11, max: calculateHP(madelynCharacteristics) },
     magicPoints: {current: 12, max: calculateMP(madelynCharacteristics) },
-    sanity: {current: 60, max: madelynCharacteristics.poder, initial: 60}
+    sanity: {current: 60, max: madelynCharacteristics.power, initial: 60}
   },
   skills: madelynSkills,
   combat: generateWeapons(["Unarmed", "Small Knife"], madelynSkills, madelynCharacteristics),
