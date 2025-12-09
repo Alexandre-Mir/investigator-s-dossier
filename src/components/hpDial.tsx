@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import useResource from "../hooks/useResource";
 
 interface Props {
 	current: number;
 	max: number;
 	label?: string;
 	onChange?: (newValue: number) => void;
-	color?: string; // Cor base (ex: "range-success")
+	color?: string;
 }
 
 export default function HitPointDial({
@@ -17,40 +17,20 @@ export default function HitPointDial({
 	onChange,
 	color = "range-success", // Padrão verde/dourado
 }: Props) {
-	const [value, setValue] = useState(current);
+	const { value, updateValue, isDying, isCritical } = useResource(current, max, onChange);
 
-	// Sincroniza se o valor externo mudar (ex: carregou do banco de dados)
-	useEffect(() => {
-		setValue(current);
-	}, [current]);
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const newValue = Number(e.target.value);
+		updateValue(newValue);
+	};
 
-	// --- LÓGICA DE CORES ---
-	const isDying = value < max / 3;
-	const isCritical = value < max / 2;
-
-	// Escolhe a classe de cor do DaisyUI baseada na vida
-	// range-error = Vermelho | range-warning = Amarelo | range-success = Verde/Base
 	const rangeColorClass = isDying ? "range-error" : isCritical ? "range-warning" : color;
 
-	// Cor do texto do número grande
 	const textColorClass = isDying
 		? "text-error animate-pulse"
 		: isCritical
 		? "text-warning"
 		: "text-base-content";
-
-	// --- INTERAÇÃO ---
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const newValue = Number(e.target.value);
-
-		// Feedback tátil ao arrastar
-		if (newValue !== value && typeof navigator !== "undefined" && navigator.vibrate) {
-			navigator.vibrate(10);
-		}
-
-		setValue(newValue);
-		if (onChange) onChange(newValue);
-	};
 
 	return (
 		<div className="w-full max-w-xs flex flex-col gap-2">
