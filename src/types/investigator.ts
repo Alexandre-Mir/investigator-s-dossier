@@ -8,16 +8,16 @@ export interface Profile {
 }
 
 export interface Characteristics {
-  força: number;
-  constituição: number;
-  destreza: number;
-  inteligência: number;
-  tamanho: number;
-  poder: number;
-  aparência: number;
-  educação: number;
-  movimento?: number;
-  corpo?: number;
+  strength: number;
+  constitution: number;
+  dexterity: number;
+  intelligence: number;
+  size: number;
+  power: number;
+  appearance: number;
+  education: number;
+  move?: number;
+  build?: number;
 }
 
 export interface Status {
@@ -51,8 +51,8 @@ export interface Backstory {
   traits?: string;
   ideologyBeliefs?: string;
   injuriesScars?: string;
-  significant_people?: string;
-  phobias_manias?: string;
+  significantPeople?: string;
+  phobiasManias?: string;
   meaningfulLocations?: string;
   arcaneTomesSpells?: string;
   treasuredPossessions?: string;
