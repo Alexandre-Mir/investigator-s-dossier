@@ -30,8 +30,8 @@ const characterCard = () => {
 						<p className="line-clamp-3 ">{investigator.backstory.story}</p>
 
 						<div className="card-actions justify-end">
-							<Link href={`/investigator/${investigator.id}`}>
-								<button className="btn btn-primary">Selecionar</button>
+							<Link className="btn btn-primary" href={`/investigator/${investigator.id}`}>
+								Selecionar
 							</Link>
 						</div>
 					</div>

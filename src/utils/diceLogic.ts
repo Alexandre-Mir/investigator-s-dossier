@@ -8,20 +8,6 @@ export interface RollResult {
   color: string;
 }
 
-function triggerHapticFeedback(status: RollStatus) {
-  // Verificação de segurança: O código só roda no navegador e se o hardware suportar
-  if (typeof navigator === "undefined" || !navigator.vibrate) return;
-
-  if (status === "Desastre!") {
-    // Vibração longa e pesada apenas para o pior cenário
-    navigator.vibrate(500);
-  } else {
-    // Vibração curta (igual ao "Sucesso") para todos os outros casos
-    // Inclui: Crítico, Extremo, Difícil, Sucesso Normal e Falha
-    navigator.vibrate(50);
-  }
-}
-
 export function rollD100(name: string, targetValue: number): RollResult {
   const roll = Math.floor(Math.random() * 100) + 1;
   
@@ -48,8 +34,6 @@ export function rollD100(name: string, targetValue: number): RollResult {
     status = "Sucesso!";
     color = "text-success";
   }
-
-  triggerHapticFeedback(status);
 
   return {
     attribute: name,
