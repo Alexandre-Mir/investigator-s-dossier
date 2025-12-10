@@ -8,16 +8,24 @@ interface Props {
 	label?: string;
 	onChange?: (newValue: number) => void;
 	color?: string;
+	investigatorId: number;
 }
 
 export default function HitPointDial({
+	investigatorId,
 	current,
 	max,
 	label = "HP",
 	onChange,
 	color = "range-success", // Padrão verde/dourado
 }: Props) {
-	const { value, updateValue, isDying, isCritical } = useResource(current, max, onChange);
+	const { value, updateValue, isDying, isCritical } = useResource(
+		current,
+		max,
+		investigatorId,
+		label,
+		onChange
+	);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const newValue = Number(e.target.value);

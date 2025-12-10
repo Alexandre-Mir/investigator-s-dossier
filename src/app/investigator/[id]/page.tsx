@@ -41,7 +41,11 @@ export default async function InvestigatorPage({ params }: PageProps) {
 				profileResidence={character.profile.birthplace}
 				profileBirthplace={character.profile.residence}
 			>
-				<HitPointDial current={character.status.hitPoints.current} max={maxHP} />
+				<HitPointDial
+					investigatorId={investigatorId}
+					current={character.status.hitPoints.current}
+					max={maxHP}
+				/>
 				<MpDial
 					mpCurrent={character.status.magicPoints.current}
 					mpMax={character.status.magicPoints.max}
