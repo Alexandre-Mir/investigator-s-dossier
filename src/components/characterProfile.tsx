@@ -1,23 +1,25 @@
 import Image from "next/image";
 import ProfileBadge from "./profileBadge";
 
-interface CharacterProfileProps {
+interface Props {
 	profileImageUrl?: string;
 	profileName: string;
 	profileAge: number;
 	profileOccupation: string;
 	profileBirthplace: string;
 	profileResidence: string;
+	mentalStatus: string;
 	children?: React.ReactNode;
 }
 
-const characterProfile: React.FC<CharacterProfileProps> = ({
+const characterProfile: React.FC<Props> = ({
 	profileImageUrl,
 	profileName,
 	profileAge,
 	profileOccupation,
 	profileBirthplace,
 	profileResidence,
+	mentalStatus,
 	children,
 }) => {
 	return (
@@ -28,17 +30,18 @@ const characterProfile: React.FC<CharacterProfileProps> = ({
 					alt={profileName}
 					height={100}
 					width={100}
-					className="object-cover object-top"
+					className="object-cover object-center"
 				/>
 			</figure>
 			<div className="card-body">
-				<h1 className="card-title inline text-primary">
-					{profileName}, <span className="text-xs">{profileAge} anos</span>
+				<h1 className="card-title inline text-primary text-nowrap">
+					{profileName}, <span className="text-xs m-0">{profileAge} anos</span>
 				</h1>
 				<ProfileBadge
 					occupation={profileOccupation}
 					birthplace={profileBirthplace}
 					residence={profileResidence}
+					mentalStatus={mentalStatus}
 				/>
 				{children}
 			</div>

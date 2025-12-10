@@ -4,8 +4,8 @@ import { Skills, Characteristics } from "../types/investigator"
 function generateBase(characteristics: Characteristics): Skills[]{
   return SKILLS_BASE.map((skill) => {
     let initialValue = skill.baseValue;
-    if (skill.name === "Esquivar") initialValue = Math.floor(characteristics.destreza / 2);
-    if (skill.name === "Língua (Nativa)") initialValue = characteristics.educação;
+    if (skill.name === "Esquivar") initialValue = Math.floor(characteristics.dexterity / 2);
+    if (skill.name === "Língua (Nativa)") initialValue = characteristics.education;
 
     return{
       ...skill,

@@ -1,4 +1,4 @@
-import { Characteristics } from "../types/investigator";
+import { Characteristics, Skills } from "../types/investigator";
 
 export function calculateMov(characteristics: Characteristics, age: number): number {
   const { strength, dexterity, size } = characteristics;
@@ -78,4 +78,12 @@ export function calculateDamageBonus(characteristics: Characteristics): string {
 
   return `+${totalDices}D6`;
   
+}
+
+export function calculateMaxSanity(skillsList: Skills[]):number {
+  const findMythos = skillsList.find((skill) => skill.name === "Mythos de Cthulhu")
+  
+  const mythosValue = findMythos ? (findMythos.currentValue ?? findMythos.baseValue) : 0;
+
+  return (99 - mythosValue)
 }
