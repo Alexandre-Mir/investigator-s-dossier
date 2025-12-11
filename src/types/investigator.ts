@@ -40,6 +40,7 @@ export interface Combat {
   skillUsed?: {value?: number, name?: string};
   damage: string;
   attacks: number;
+  maxAttacks?: number, 
   range?: string;
   ammo?: string | number ;
   malfunction: number;
@@ -64,7 +65,7 @@ export interface Inventory{
   gearPossessions: string[];
   spendingLevel: number;
   cash: number;
-  assets: string[];
+  assets: number;
 }
 
 export interface Investigator {

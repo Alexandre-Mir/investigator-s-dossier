@@ -66,23 +66,23 @@ export default function HitPointDial({
 
 			{/* MARCADORES VISUAIS (TICKS) */}
 			{/* Calculamos 5 pontos de referência: 0%, 25%, 50%, 75%, 100% */}
-			<div className="w-full flex justify-between px-1 text-xs opacity-30">
+			{/* <div className="w-full flex justify-between px-1 text-xs opacity-30">
 				<span>|</span>
 				<span>|</span>
 				<span>|</span>
 				<span>|</span>
 				<span>|</span>
-			</div>
+			</div> */}
 
 			{/* NÚMEROS DE REFERÊNCIA */}
-			<div className="w-full flex justify-between px-1 text-[10px] font-mono opacity-50">
+			{/* <div className="w-full flex justify-between px-1 text-[10px] font-mono opacity-50">
 				<span className="font-bold">0</span>
-				{/* Mostra valores intermediários aproximados */}
 				<span>{Math.round(max * 0.25)}</span>
-				<span className="font-bold">{Math.round(max * 0.5)}</span> {/* Metade (Lesão Grave) */}
+				<span className="font-bold">{Math.round(max * 0.5)}</span> 
 				<span>{Math.round(max * 0.75)}</span>
 				<span className="font-bold">{max}</span>
-			</div>
+				</div> 
+			*/}
 		</div>
 	);
 }

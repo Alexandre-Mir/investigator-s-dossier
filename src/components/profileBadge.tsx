@@ -3,7 +3,7 @@ interface Props {
 	occupation: string;
 	birthplace: string;
 	residence: string;
-	mentalStatus: string;
+	mentalStatus?: string;
 }
 
 export default function ProfileBadge({ occupation, birthplace, residence, mentalStatus }: Props) {

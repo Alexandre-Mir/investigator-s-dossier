@@ -27,7 +27,7 @@ const characterCard = () => {
 							residence={investigator.profile.residence}
 						/>
 
-						<p className="line-clamp-3 ">{investigator.backstory.story}</p>
+						<p className="line-clamp-3 text-justify">{investigator.backstory.story}</p>
 
 						<div className="card-actions justify-end">
 							<Link className="btn btn-primary" href={`/investigator/${investigator.id}`}>

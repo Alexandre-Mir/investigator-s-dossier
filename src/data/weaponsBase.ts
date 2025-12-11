@@ -18,5 +18,15 @@ export const WEAPONS_BASE: Record<string, Combat> = {
     attacks: 1,
     range: "Toque",
     malfunction: 100
+  },
+  ".32 Caliber Revolver": {
+    name: "Revólver .32",
+    skillUsed: {name: "Pistolas"},
+    damage: "1D8",
+    attacks: 1,
+    maxAttacks: 3,
+    range: "15 metros",
+    ammo: 6,
+    malfunction: 100 
   }
 }
