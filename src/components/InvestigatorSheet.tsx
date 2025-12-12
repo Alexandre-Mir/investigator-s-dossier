@@ -63,6 +63,7 @@ export default function InvestigatorSheet({ character }: { character: Investigat
 				profileResidence={character.profile.birthplace}
 				profileBirthplace={character.profile.residence}
 				mentalStatus={mentalState}
+				charBuild={character.characteristics.build}
 			>
 				<HitPointDial
 					investigatorId={character.id}

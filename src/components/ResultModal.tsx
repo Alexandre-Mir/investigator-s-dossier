@@ -13,7 +13,7 @@ const ResultModal = forwardRef<HTMLDialogElement, Props>(({ result, onClose }, r
 		<dialog ref={ref} className="modal" onClose={onClose}>
 			<div className="modal-box text-center">
 				{result && (
-					<article className="prose">
+					<article className="prose flex flex-col place-items-center">
 						<div className={`text-3xl uppercase mb-2 ${result.color}`}>{result.status}</div>
 						<div className="stats bg-base-200">
 							<div className="stat w-24">
@@ -27,6 +27,12 @@ const ResultModal = forwardRef<HTMLDialogElement, Props>(({ result, onClose }, r
 								<div className={`stat-title uppercase font-bold ${result.color}`}>Dado</div>
 								<div className={`stat-value ${result.color}`}>{result.rolled}</div>
 							</div>
+							{result.damageValue && result.damageValue > 0 && (
+								<div className="stat w-24">
+									<div className="stat-title text-error uppercase font-bold">Dano</div>
+									<div className="stat-value text-error">{result.damageValue}</div>
+								</div>
+							)}
 						</div>
 					</article>
 				)}

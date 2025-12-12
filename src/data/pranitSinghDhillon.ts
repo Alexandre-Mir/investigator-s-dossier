@@ -63,7 +63,13 @@ export const PRANIT_SINGH_DHILLON: Investigator = {
     sanity: {current: 60, max: charCharacteristics.power, initial: 60}
   },
   skills: charSkills,
-  combat: [],
+  combat: [
+    {name: "Desarmado", damage: "1D3+DB", skillUsed: "Briga", attacks: 1, malfunction: 100, range: 0},
+    {name: "Kirpan (faca)", damage: "1D4+2+DB", skillUsed: "Briga", attacks: 1, malfunction: 100, range: 0},
+    {name: "Sabre (espada)", damage: "1D8+1+DB", skillUsed: "Espadas", attacks: 1, malfunction: 100, range: 0},
+    {name: "Chakram (arremessado)", damage: "1D3+1D2", skillUsed: "Arremessar", attacks: 1, malfunction: 100, range: 40, ammo: 1},
+    {name: "Rifle Martini-Henry .45", damage: "1D8+3+1D6", skillUsed: "Rifles", attacks: 1, malfunction: 100, range: 80, maxAttacks: 3, ammo: 1},
+  ],
   backstory: {
     story: "Nascido e criado na cidade punjabi de Ferozepore, a família de Pranit tem uma longa história de serviço militar; primeiro para com os marajás do Império Sikh, e depois para os britânicos após a queda do Império. Desejoso de seguir os passos de seus antepassados, Pranit juntou-se aos Sikhs de Ferozepore do 14o Príncipe de Gales assim que pôde. Durante a Grande Guerra, seu batalhão serviu no Egito, Gallipoli, Pérsia e Mesopotâmia (onde o heroísmo dos soldados Sikh lhes rendeu o apelido de “Leões Negros”). Sendo um dos poucos a sobreviver ileso ao banho de sangue que foi a Terceira Batalha de Krithia (Gallipoli, 1915), Pranit foi finalmente dispensado por invalidez devido a uma lesão pouco antes do Armistício. Com dificuldade em se estabelecer na vida civil, Pranit decidiu dar bom uso às suas habilidades militares e agora viaja pelo mundo como um soldado contratado. Seu contrato anterior como guarda em uma  das minas de prata do Peru tinha acabado de expirar, então o anúncio da expedição de Augustus Larkin, que partiria em busca de encontrar uma pirâmide perdida, não podia ter vindo em hora melhor. Ao ler seu histórico de serviço, Larkin aceitou Pranit como segurança para a próxima expedição.",
     personalDescription: "Indiano, alto e bonito, com olhos penetrantes, uma barba desgrenhada e um turbante azul pálido.",

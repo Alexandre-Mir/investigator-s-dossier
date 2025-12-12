@@ -67,7 +67,10 @@ export const PROFESSORA_ELEANOR_BUTLER: Investigator = {
     sanity: {current: 65, max: charCharacteristics.power, initial: 65}
   },
   skills: charSkills,
-  combat: [],
+  combat: [
+    {name: "Desarmado", damage: "1D3+DB", skillUsed: "Briga", attacks: 1, malfunction: 100, range: 0}
+
+  ],
   backstory: {
     story: "Eleanor cresceu numa fazenda do meio oeste, ansiando por alguma mudança em sua vida monótona. Quando confrontada com a perspectiva de se casar com um garoto local, ela resolveu escapar do futuro que o destino lhe reservara e fugiu, embarcando às pressas em um trem para Nova York. Trabalhando nos empregos que conseguia, ainda encontrou tempo para seu passatempo favorito, ler livros de história na Biblioteca Pública de Nova York — uma paixão constante ao longo de sua vida que a levou a se formar e tornar-se historiadora. Na vida acadêmica, ela ainda precisa deixar a sua marca, um fato que muitas vezes perturba sua mente, pois ela vê outros recebendo fama enquanto seu trabalho persiste sem receber reconhecimento. Após ver o anúncio de Augustus  Larkin sobre sua expedição para encontrar uma pirâmide perdida no Peru, Eleanor resolveu fazer algo desafiador e inesperado. Contatando Larkin, ingressou na expedição e fez suas malas para o Peru em busca de fama e aventura.",
     personalDescription: "Americana branca, altura e compleição mediana, com cabelos castanhos à altura do ombro e olhos castanhos.",

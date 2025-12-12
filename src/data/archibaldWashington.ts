@@ -62,7 +62,11 @@ export const ARCHIBALD_WASHINGTON: Investigator = {
     sanity: {current: 50, max: charCharacteristics.power, initial: 50}
   },
   skills: charSkills,
-  combat: [],
+  combat: [
+    {name: "Desarmado", damage: "1D3+DB", skillUsed: "Briga", attacks: 1, malfunction: 100, range: 0},
+    {name: "Revólver .38", damage: "1D10", skillUsed: "Pistolas", attacks: 1, malfunction: 100, range: 15, maxAttacks: 3, ammo: 6}
+
+  ],
   backstory: {
     story: "Archibald passou sua juventude em Boston, se metendo em problemas nas ruas e com a lei; todos acreditavam que ele passaria a maior parte de sua vida dentro de uma prisão, mas isso foi antes dele descobrir o boxe. Direcionando toda a sua energia para o esporte, ele se concentrou em ganhar lutas e entrou em rápida ascensão para logo se tornar um verdadeiro lutador. No entanto, a sorte nunca esteve ao seu lado. Na véspera da luta pelo grande título, ele foi “aconselhado” a desistir ou sua família enfrentaria as consequências. Ele perdeu, mas sempre se odiou por isso. Guiado por seu senso inato de justiça, ele matou o mafioso que havia ameaçado sua família e fugiu de Boston, juntando-se ao exército para lutar na guerra, onde foi treinado em engenharia. Desde que regressou da França, trabalhou como mecânico, sem nunca conseguir um trabalho melhor como engenheiro. Archibald anseia por coisas empolgantes, desesperado como está para se libertar do  trabalho pesado e do racismo diário que precisa aturar. Lendo que uma expedição no Peru precisava de um engenheiro, ele contatou o líder da expedição, Augustus Larkin, e ofereceu seus serviços. Usando todas as suas escassas poupanças, Archibald comprou uma passagem e partiu para Lima, no Peru. Talvez lá ele encontre o significado que procura em sua vida.",
     personalDescription: "Afro-americano, com porte robusto e forte; seu rosto bonito mascara sua carreira no boxe.",

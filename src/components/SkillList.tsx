@@ -86,7 +86,7 @@ export default function SkillList({ skills, onRoll }: Props) {
 							return (
 								<>
 									<details className="collapse collapse-plus bg-base-100 mb-2">
-										<input className="absolute" type="radio" name="my-accordion-3" defaultChecked />
+										<input className="hidden" type="radio" name="my-accordion-3" defaultChecked />
 										<summary className="collapse-title" key={category}>
 											{category}
 										</summary>

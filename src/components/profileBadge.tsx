@@ -1,12 +1,19 @@
-import { Baby, Briefcase, Brain, MapPinHouse } from "lucide-react";
+import { Baby, Briefcase, Brain, MapPinHouse, PersonStanding } from "lucide-react";
 interface Props {
 	occupation: string;
 	birthplace: string;
 	residence: string;
 	mentalStatus?: string;
+	charBuild: number;
 }
 
-export default function ProfileBadge({ occupation, birthplace, residence, mentalStatus }: Props) {
+export default function ProfileBadge({
+	occupation,
+	birthplace,
+	residence,
+	mentalStatus,
+	charBuild,
+}: Props) {
 	return (
 		<div className="gap-1 w-48">
 			<span className="badge badge-xs  ">
@@ -28,6 +35,13 @@ export default function ProfileBadge({ occupation, birthplace, residence, mental
 					{mentalStatus}
 				</span>
 			)}
+
+			{charBuild && charBuild > 0 ? (
+				<span className="badge badge-xs">
+					<PersonStanding size={12} />
+					Robusto
+				</span>
+			) : null}
 		</div>
 	);
 }

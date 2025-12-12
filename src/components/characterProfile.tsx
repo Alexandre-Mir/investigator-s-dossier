@@ -9,6 +9,7 @@ interface Props {
 	profileBirthplace: string;
 	profileResidence: string;
 	mentalStatus: string;
+	charBuild: number;
 	children?: React.ReactNode;
 }
 
@@ -20,6 +21,7 @@ const characterProfile: React.FC<Props> = ({
 	profileBirthplace,
 	profileResidence,
 	mentalStatus,
+	charBuild,
 	children,
 }) => {
 	return (
@@ -42,6 +44,7 @@ const characterProfile: React.FC<Props> = ({
 					birthplace={profileBirthplace}
 					residence={profileResidence}
 					mentalStatus={mentalStatus}
+					charBuild={charBuild}
 				/>
 				{children}
 			</div>

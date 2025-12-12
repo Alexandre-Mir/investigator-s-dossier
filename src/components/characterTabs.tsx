@@ -1,15 +1,16 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Dices, Swords, Scroll, X } from "lucide-react";
-import { Investigator } from "../types/investigator";
-import type { RollResult } from "../utils/diceLogic";
+import { Dices, Swords, Scroll, X, Crosshair, HandFist } from "lucide-react";
+import { Investigator, Combat } from "../types/investigator";
+import { rollD100, type RollResult, calculateDamage } from "../utils/diceLogic";
 
 import AttributeRoller from "./attributeRoller";
 import ResultModal from "./ResultModal";
-import WeaponList from "./WeaponList";
 import CharacterBackstory from "./characterBackstory";
 import SkillList from "./SkillList";
+
+import { calculateDamageBonus } from "../utils/rules";
 
 interface TabsProps {
 	character: Investigator;
@@ -27,6 +28,24 @@ const CharacterTabs = ({ character }: TabsProps) => {
 		if (modalRef.current) {
 			modalRef.current.showModal();
 		}
+	};
+
+	const handleWeaponRoll = (weapon: Combat) => {
+		const skillFound = character.skills.find((s) => s.name === weapon.skillUsed);
+
+		const skillValue = skillFound ? skillFound.currentValue || skillFound.baseValue : 0;
+
+		const damageBonus = calculateDamageBonus(character.characteristics);
+
+		const result = rollD100(weapon.name, skillValue);
+
+		if (result.status.includes("Sucesso")) {
+			const finalDamage = calculateDamage(weapon.damage, damageBonus);
+
+			result.damageValue = finalDamage;
+		}
+
+		handleGlobalRoll(result);
 	};
 
 	return (
@@ -72,7 +91,32 @@ const CharacterTabs = ({ character }: TabsProps) => {
 					</div>
 				)}
 				{/* CONTEÚDO ABA 1 */}
-				{activeTab === 1 && <div className="px-2"></div>}
+				{activeTab === 1 && (
+					<div className="px-2 ">
+						<div className="p-2 bg-base-100 rounded-lg flex flex-wrap">
+							{character.combat.map((weapon) => {
+								const weaponSkill = weapon.skillUsed;
+								const skillFound = character.skills.find((s) => s.name === weaponSkill);
+
+								const skillValue =
+									skillFound ?? skillFound ? skillFound?.currentValue || skillFound.baseValue : 0;
+
+								return (
+									<button
+										key={weapon.name}
+										onClick={() => {
+											handleWeaponRoll(weapon);
+										}}
+										className="btn btn-soft btn-error mr-2 text-xs "
+									>
+										{weapon.range !== 0 ? <Crosshair size={14} /> : <HandFist size={14} />}
+										{weapon.name} ({skillValue}%)
+									</button>
+								);
+							})}
+						</div>
+					</div>
+				)}
 				{/* CONTEÚDO ABA 2 */}
 				{activeTab === 2 && (
 					<div className="mx-2 bg-base-100 rounded-lg">

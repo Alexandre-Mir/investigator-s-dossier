@@ -65,7 +65,11 @@ export const DR_ARTHUR_DIBDEN: Investigator = {
     sanity: {current: 54, max: charCharacteristics.power, initial: 54}
   },
   skills: charSkills,
-  combat: [],
+  combat: [
+    {name: "Desarmado", damage: "1D3+DB", skillUsed: "Briga", attacks: 1, malfunction: 100, range: 0},
+    {name: "Revólver .32", damage: "1D8", skillUsed: "Pistolas", attacks: 1, malfunction: 100, range: 15, maxAttacks: 3, ammo: 6}
+
+  ],
   backstory: {
     story: "Dibden serviu no Corpo Médico do Exército Real por mais de vinte anos. Um breve casamento com sua namorada de infância, Mary, terminou em tragédia quando ela morreu durante o parto. Após perder tanto seu amor quanto seu bebê, Dibden se afundou no trabalho. Apesar de suas experiências com os horrores da guerra moderna durante a Grande Guerra, seu desejo de viajar não diminuiu e, após o conflito, ele viajou através do Atlântico para as Américas. Embora inicialmente apreciando os pontos turísticos dos EUA, seu fascínio pela América do Sul o levou ao México, e depois para a Colômbia. Nos últimos meses, Dibden tem prestado assistência médica e auxílio na esteira da epidemia de gripe espanhola. Recentemente, ele viu notícias da imprensa sobre uma expedição que estava sendo organizada em Lima, Peru por um tal Augustus Larkin. Ansioso para conhecer o antigo Peru, ele contatou Larkin e garantiu um lugar na expedição por sua experiência médica de campo.",
     personalDescription: "Acima da altura média e bastante robusto, com cabelos grisalhos e rosto marcado pela idade, seus olhos têm um olhar assombrado.",

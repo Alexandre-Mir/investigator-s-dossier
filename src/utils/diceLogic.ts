@@ -6,6 +6,7 @@ export interface RollResult {
   rolled: number;
   status: RollStatus;
   color: string;
+  damageValue?: number;
 }
 
 export function rollD100(name: string, targetValue: number): RollResult {
@@ -42,6 +43,30 @@ export function rollD100(name: string, targetValue: number): RollResult {
     status,
     color
   };
+}
 
-  
+export const calculateDamage = ( formula:string, damageBonus: string): number => {
+  const formulaWithDB = formula.replace("DB", damageBonus)
+  const splitDB = formulaWithDB.split("+")
+
+  let totalDamage = 0
+
+  for (const part of splitDB) {
+    if(part.includes("D")){
+      const diceParts = part.split("D");
+
+      const count = Number(diceParts[0]);
+      const sides = Number(diceParts[1]);
+
+      for(let i = 0; i < count; i++) {
+        const result = Math.floor(Math.random() * sides) + 1
+
+        totalDamage = totalDamage + result
+      }
+    } else {
+      totalDamage = totalDamage + Number(part)
+    }
+  }
+
+  return totalDamage
 }
