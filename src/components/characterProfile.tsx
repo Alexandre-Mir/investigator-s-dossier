@@ -9,7 +9,7 @@ interface Props {
 	profileBirthplace: string;
 	profileResidence: string;
 	mentalStatus: string;
-	charBuild: number;
+	charBuild?: number;
 	children?: React.ReactNode;
 }
 

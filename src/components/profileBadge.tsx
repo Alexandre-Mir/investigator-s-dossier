@@ -4,7 +4,7 @@ interface Props {
 	birthplace: string;
 	residence: string;
 	mentalStatus?: string;
-	charBuild: number;
+	charBuild?: number;
 }
 
 export default function ProfileBadge({

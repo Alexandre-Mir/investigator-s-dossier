@@ -25,7 +25,6 @@ const characterCard = () => {
 							occupation={investigator.profile.occupation}
 							birthplace={investigator.profile.birthplace}
 							residence={investigator.profile.residence}
-							charBuild={investigator.characteristics.build}
 						/>
 
 						<p className="line-clamp-3 text-justify">{investigator.backstory.story}</p>
