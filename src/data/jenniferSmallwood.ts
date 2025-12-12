@@ -1,7 +1,6 @@
 import { Investigator } from "@/src/types/investigator";
 import { generateCustomSkills } from "../utils/characterHelpers";
 import { calculateBuild, calculateHP, calculateMov, calculateMP } from "../utils/rules";
-import { generateWeapons } from "../utils/combatHelpers";
 
 const charCharacteristics = {
   strength: 35,
@@ -64,7 +63,7 @@ export const JENNIFER_SMALLWOOD: Investigator = {
     sanity: {current: 60, max: charCharacteristics.power, initial: 60}
   },
   skills: charSkills,
-  combat: generateWeapons(["Unarmed", "12 Gauge Shotgun (2C)"], charSkills, charCharacteristics),
+  combat: [],
   backstory: {
     story: "Jennifer vem de uma família inglesa cuja riqueza foi acumulada durante o início do século XIX, através de empreendimentos de transporte. Seus pais se perderam no mar em 1888, enquanto estavam a bordo do SS Vaitarna a caminho de Bombaim, deixando Jennifer e sua irmã mais velha Valerie como herdeiras da fortuna Smallwood. Enquanto Valerie preferiu ficar na casa da família em Hampshire, Jennifer fez as malas e decidiu viajar para o Novo Mundo. A decisão prejudicou seu relacionamento com a irmã, que acreditava ser o papel de uma dama ficar em sua terra e encontrar um marido adequado, não sair se metendo com climas estrangeiros. Depois de festejar em Nova York e na Califórnia, Jennifer cansou-se das intermináveis danças e filas de homens tentando atrair seu interesse. Ela resolveu que havia muito mais para ver e experimentar e começou a procurar (como ela mesma disse) por “algo diferente”. Vendo um artigo sobre uma expedição que estava sendo montada no Peru em busca de pessoas com um desejo por aventura, Jennifer contatou o chefe do projeto,  um tal Augustus Larkin, que lhe contou sobre seu objetivo de encontrar uma pirâmide perdida. A oferta de doar mil dólares para a expedição foi aceita de bom grado por Larkin. Com os planos de viagem montados, a Jennifer partiu para Lima e para o seu destino.",
     personalDescription: "Inglesa branca, alta e esbelta, com cabelos escuros curtos em um penteado elegante.",

@@ -1,7 +1,6 @@
 import { Investigator } from "@/src/types/investigator";
 import { generateCustomSkills } from "../utils/characterHelpers";
 import { calculateBuild, calculateHP, calculateMov, calculateMP } from "../utils/rules";
-import { generateWeapons } from "../utils/combatHelpers";
 
 const charCharacteristics = {
   strength: 75,
@@ -69,7 +68,7 @@ export const WINSTON_GREENE: Investigator = {
     sanity: {current: 55, max: charCharacteristics.power, initial: 55}
   },
   skills: charSkills,
-  combat: generateWeapons(["Unarmed", ".38 Automatic Pistol"], charSkills, charCharacteristics),
+  combat: [],
   backstory: {
     story: "Winston sempre teve uma vida cosmopolita, criado por pais abastados em São Francisco. Ele nunca precisou lutar para encontrar seu caminho, desfrutou de uma educação privada longe das realidades mais duras da vida. Apesar de nascer em berço de ouro, Winston sempre olhou para o horizonte com um desejo ardente de desafiar a si mesmo, e também de descobrir quem ele realmente era. Foi apenas na universidade que descobriu sua paixão pela história e pelo mundo antigo. Cansado de ser excluído das sociedades universitárias por causa de sua cor, ele descobriu que mergulhar no passado parecia fornecer-lhe um meio para escapar do mundo moderno e de seus males. Após a graduação, Winston procurou juntar-se a inúmeras pesquisas arqueológicas, mas foi recusado vez após outra. Sabendo que suas credenciais eram iguais, se não  melhores, do que a dos outros graduados, ele ficou furioso e deprimido, pois parecia que nunca conseguiria provar o seu valor e fazer seu nome no campo que escolheu. Perto de desistir de seus sonhos, ele encontrou um artigo de notícias sobre um homem chamado Augustus Larkin que estava montando uma expedição para encontrar uma pirâmide perdida nas profundezas do Peru. Ao entrar em contato com Larkin, Winston ficou encantado por ser aceito sem reservas. Finalmente, parecia que o destino tinha permitido uma oportunidade, que ele agora pretende agarrar com todas as suas strengths.",
     personalDescription: "Afro-americano; compleição magra e rígida, com feições bonitas.",

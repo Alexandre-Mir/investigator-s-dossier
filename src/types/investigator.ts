@@ -37,12 +37,12 @@ export interface Skills {
 
 export interface Combat {
   name: string;
-  skillUsed?: {value?: number, name?: string};
+  skillUsed?: {value?: number, nameSkill?: string};
   damage: string;
   attacks: number;
   maxAttacks?: number, 
   range?: string;
-  ammo?: string | number ;
+  ammo?: number;
   malfunction: number;
 }
 
@@ -79,3 +79,18 @@ export interface Investigator {
   inventory: Inventory;
 }
 
+export interface Weapon {
+  id: number;
+  combat: Combat;
+}
+
+export interface WeaponsDefinition{
+  name: string,
+  damage: string,
+  skillUsed: string,
+  range?: number,
+  attacks: number,
+  maxAttacks?: number,
+  ammo?: number;
+  malfunction: number
+}

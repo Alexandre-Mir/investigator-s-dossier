@@ -1,7 +1,6 @@
 import { Investigator } from "@/src/types/investigator";
 import { generateCustomSkills } from "../utils/characterHelpers";
 import { calculateBuild, calculateHP, calculateMov, calculateMP } from "../utils/rules";
-import { generateWeapons } from "../utils/combatHelpers";
 
 const charCharacteristics = {
   strength: 55,
@@ -62,7 +61,7 @@ export const FRANCOISE_PELLETIER: Investigator = {
     sanity: {current: 70, max: charCharacteristics.power, initial: 70}
   },
   skills: charSkills,
-  combat: generateWeapons(["Unarmed"], charSkills, charCharacteristics),
+  combat: [],
   backstory: {
     story: "Filha de um adido naval, Françoise nunca tinha vivido em um lugar por tempo o bastante para considerá-lo sua casa. Quando seu pai estava lotado em Lima, como parte da missão militar francesa permanente no Peru,Françoise ficou deslumbrada com a vida noturna de sua cidade adotiva, e ela continuamente entrava e saía da cena social,lutando para encontrar um lugar para si mesma que não fosse definido pelo trabalho de seu pai.Quando,por acaso,ganhou em seu 21o aniversário uma câmera fotográfica de presente,a jovem encontrou sua resposta.Desde então,ela vem construindo uma reputação como fotógrafa em Lima. No entanto, ela desejava ser levada a sério, além do que uma cronista da alta sociedade de Lima, e queria começar a trabalhar com fotografia paisagística. Ultimamente, Françoise tem visitado vários sítios arqueológicos de Lima, particularmente os templos de Pachacamac, cuja antiguidade e persistência a fascinam. Ao ficar sabendo do anúncio de Augustus Larkin sobre a busca de uma pirâmide perdida, ela viu uma oportunidade de finalmente se libertar e encontrar aventura e satisfação pessoal. Tendo assegurado uma vaga para documentar a expedição, Françoise vê o esforço de Larkin como uma oportunidade de se provar para aqueles que sentem que ela estaria melhor se continuasse trabalhando com o que já sabe fazer.",
     personalDescription: "Francesa branca; cabelo loiro ondulado e um sorriso largo. Veste-se com trajes masculinos sempre que acredita que vai se safar. Seus olhos cor de avelã procuram constantemente o melhor ângulo para uma foto.",

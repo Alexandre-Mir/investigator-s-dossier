@@ -1,7 +1,6 @@
 import { Investigator } from "@/src/types/investigator";
 import { generateCustomSkills } from "../utils/characterHelpers";
 import { calculateBuild, calculateHP, calculateMov, calculateMP } from "../utils/rules";
-import { generateWeapons } from "../utils/combatHelpers";
 
 const charCharacteristics = {
   strength: 50,
@@ -66,7 +65,7 @@ export const MADELYN_BROWN: Investigator = {
     sanity: {current: 60, max: charCharacteristics.power, initial: 60}
   },
   skills: charSkills,
-  combat: generateWeapons(["Unarmed"], charSkills, charCharacteristics),
+  combat: [],
   backstory: {
     story: "Sempre lendo os livros de história de seu pai quando criança, Madelyn muitas vezes acabava perdida em sonhos com lugares exóticos distantes e pessoas estranhas com costumes ainda mais estranhos. Madelyn cresceu na companhia dos aborígenes australianos, que às vezes trabalhavam ou passavam pela fazenda de seu pai; ela adorava ouvir as histórias e aprender sobre a cultura, apesar de sua família desaprovar isso. Sua natureza acadêmica e amor pelo aprendizado fizeram com que ela se saísse bem na escola, encorajada por sua família e seus professores. Madelyn descobriu que poderia perseguir seu interesse em culturas estrangeiras através da ciência da antropologia e foi o que estudou na Universidade. Desde a graduação, ela teve a sorte de participar de vários projetos australianos e também, mais recentemente, pôde ir aos Estados Unidos passar um tempo com a tribo Arapahoe de Wyoming. Infelizmente, o pouco financiamento que ela recebera esgotou-se — então, quando ouviu falar que uma expedição no Peru estava à procura de pessoas, aproveitou a oportunidade para ver a América do Sul por si mesma. Após se corresponder com o líder da expedição, Augustus Larkin, ela fez as malas e foi para o sul com um sorriso no rosto.",
     personalDescription: "Australiana branca com cabelo castanho escuro, pele clara e olhos verdes.",

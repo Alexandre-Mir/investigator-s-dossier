@@ -1,7 +1,6 @@
 import { Investigator } from "@/src/types/investigator";
 import { generateCustomSkills } from "../utils/characterHelpers";
 import { calculateBuild, calculateHP, calculateMov, calculateMP } from "../utils/rules";
-import { generateWeapons } from "../utils/combatHelpers";
 
 const charCharacteristics = {
   strength: 70,
@@ -68,7 +67,7 @@ export const PERRY_ASTOR: Investigator = {
     sanity: {current: 65, max: charCharacteristics.power, initial: 65}
   },
   skills: charSkills,
-  combat: generateWeapons(["Unarmed", ".45 Caliber Revolver", ".30-06 Bolt-Action Rifle"], charSkills, charCharacteristics),
+  combat: [],
   backstory: {
     story: "Quando jovem, Perry vivia para sentir o vento correndo pelos seus cabelos enquanto cavalgava a uma velocidade vertiginosa em torno do rancho de seu pai. “Duro de roer”, era como o pai costumava descrevê-lo. Ficar com a cara enfiada em livros não era o estilo de Perry; ele preferia sujar as mãos de lama e sangue. Apesar dos desejos de seu pai, tinha curiosidade e empolgação demais para ficar na fazenda, desejava aventura. Aos 17 anos, Perry partiu e começou a descobrir o mundo. Ao longo dos anos, viajou extensivamente pela América do Norte e do Sul, trabalhando em todos os tipos de empregos para pagar suas despesas. Recentemente, enquanto dava apoio a uma expedição a Tiwanaku no oeste da Bolívia, Perry soube da proposta de Augustus Larkin de procurar uma pirâmide perdida no Peru. Já fazendo seus planos, ele escreveu ao organizador dizendo  que não havia ninguém mais qualificado para dar apoio ao à empreitada e disse a Larkin para esperá-lo em Lima. Perry se apressou pela costa peruana (quase 1.500 km) até chegar a Lima, bem a tempo de partir junto com a expedição.",
     personalDescription: "Um canadense branco, alto, com feições desgastadas pelo tempo e um cabelo curto e indisciplinado que costuma esconder sob o chapéu.",

@@ -72,11 +72,7 @@ const CharacterTabs = ({ character }: TabsProps) => {
 					</div>
 				)}
 				{/* CONTEÚDO ABA 1 */}
-				{activeTab === 1 && (
-					<div className="px-2">
-						<WeaponList weapons={character.combat} onRoll={handleGlobalRoll} />
-					</div>
-				)}
+				{activeTab === 1 && <div className="px-2"></div>}
 				{/* CONTEÚDO ABA 2 */}
 				{activeTab === 2 && (
 					<div className="mx-2 bg-base-100 rounded-lg">

@@ -1,7 +1,6 @@
 import { Investigator } from "@/src/types/investigator";
 import { generateCustomSkills } from "../utils/characterHelpers";
 import { calculateBuild, calculateHP, calculateMov, calculateMP } from "../utils/rules";
-import { generateWeapons } from "../utils/combatHelpers";
 
 const charCharacteristics = {
   strength: 75,
@@ -64,7 +63,7 @@ export const PRANIT_SINGH_DHILLON: Investigator = {
     sanity: {current: 60, max: charCharacteristics.power, initial: 60}
   },
   skills: charSkills,
-  combat: generateWeapons(["Unarmed", "Kirpan (knife)", "Saber (sword)", "Chakram (thrown)", "Martini-Henry .45 Rifle"], charSkills, charCharacteristics),
+  combat: [],
   backstory: {
     story: "Nascido e criado na cidade punjabi de Ferozepore, a família de Pranit tem uma longa história de serviço militar; primeiro para com os marajás do Império Sikh, e depois para os britânicos após a queda do Império. Desejoso de seguir os passos de seus antepassados, Pranit juntou-se aos Sikhs de Ferozepore do 14o Príncipe de Gales assim que pôde. Durante a Grande Guerra, seu batalhão serviu no Egito, Gallipoli, Pérsia e Mesopotâmia (onde o heroísmo dos soldados Sikh lhes rendeu o apelido de “Leões Negros”). Sendo um dos poucos a sobreviver ileso ao banho de sangue que foi a Terceira Batalha de Krithia (Gallipoli, 1915), Pranit foi finalmente dispensado por invalidez devido a uma lesão pouco antes do Armistício. Com dificuldade em se estabelecer na vida civil, Pranit decidiu dar bom uso às suas habilidades militares e agora viaja pelo mundo como um soldado contratado. Seu contrato anterior como guarda em uma  das minas de prata do Peru tinha acabado de expirar, então o anúncio da expedição de Augustus Larkin, que partiria em busca de encontrar uma pirâmide perdida, não podia ter vindo em hora melhor. Ao ler seu histórico de serviço, Larkin aceitou Pranit como segurança para a próxima expedição.",
     personalDescription: "Indiano, alto e bonito, com olhos penetrantes, uma barba desgrenhada e um turbante azul pálido.",

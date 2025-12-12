@@ -1,7 +1,6 @@
 import { Investigator } from "@/src/types/investigator";
 import { generateCustomSkills } from "../utils/characterHelpers";
 import { calculateBuild, calculateHP, calculateMov, calculateMP } from "../utils/rules";
-import { generateWeapons } from "../utils/combatHelpers";
 
 const charCharacteristics = {
   strength: 55,
@@ -65,7 +64,7 @@ export const JOHAN_BRAUN: Investigator = {
     sanity: {current: 70, max: charCharacteristics.power, initial: 70}
   },
   skills: charSkills,
-  combat: generateWeapons(["Unarmed"], charSkills, charCharacteristics),
+  combat: [],
   backstory: {
     story: "A mãe de Johan era bibliotecária e seu pai, um professor de línguas, o que pode explicar seu grande amor por livros e idiomas. Ao longo da infância, o jovem esteve rodeado de livros sobre ciência, história, mitos e muito mais. Sempre o melhor de sua classe, Johan seguiu carreira acadêmica, lendo línguas e clássicos na Universidade de Würzburg, na Baviera. Foi enquanto lecionava em sua alma mater que a Grande Guerra eclodiu, e Johan foi convocado para servir na Frente Ocidental. Sobrevivendo aos horrores das trincheiras, deixou a Europa o mais rápido que pôde e foi para a América para assumir um posto na Universidade da Califórnia, em Berkeley. Apesar de um começo promissor, Johan nunca sentiu que se encaixava no estilo de vida americano e começou a ficar desiludido com a academia. Foi com bastante interesse que ele leu sobre o ressurgimento de escavações arqueológicas que ocorreu durante a guerra, e descobriu uma entrevista com um homem chamado Augustus Larkin, que propunha montar uma expedição para o interior do Peru a fim de procurar por uma pirâmide perdida; a entrevista terminava com Larkin convocando especialistas e  aventureiros para entrar em contato com ele. Sem perder tempo, Johan escreveu para Larkin e garantiu um lugar na equipe; Larkin sentiu que seu conhecimento de línguas seria útil. A última carta de Larkin disse a Johan para se encontrar com ele e os outros membros da expedição em Lima.",
     personalDescription: "Alemão branco,baixo e um pouco acima do peso,com cabelo apresentando entradas, barba e um bigode proeminente.",
