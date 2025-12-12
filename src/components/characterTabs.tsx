@@ -9,6 +9,7 @@ import AttributeRoller from "./attributeRoller";
 import ResultModal from "./ResultModal";
 import WeaponList from "./WeaponList";
 import CharacterBackstory from "./characterBackstory";
+import SkillList from "./SkillList";
 
 interface TabsProps {
 	character: Investigator;
@@ -167,6 +168,7 @@ const CharacterTabs = ({ character }: TabsProps) => {
 					</div>
 				)}
 			</div>
+			<SkillList skills={character.skills} onRoll={handleGlobalRoll} />
 
 			<ResultModal ref={modalRef} result={result} />
 		</>

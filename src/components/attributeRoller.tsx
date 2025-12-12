@@ -1,5 +1,3 @@
-"use client";
-
 import { rollD100, RollResult } from "../utils/diceLogic";
 import { Characteristics } from "../types/investigator";
 
@@ -25,7 +23,7 @@ export default function AttributeRoller({ characteristics, onRoll }: Props) {
 
 				return (
 					<button
-						className="btn btn-dash btn-primary flex flex-col h-14 w-20 gap-0"
+						className="btn btn-soft btn-primary flex flex-col h-14 w-20 gap-0"
 						key={key}
 						onClick={() => handleClick(key, value)}
 					>

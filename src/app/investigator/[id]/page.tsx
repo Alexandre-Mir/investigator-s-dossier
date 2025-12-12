@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { INVESTIGATORS } from "@/src/data/investigatorExample";
 import Link from "next/link";
 import InvestigatorSheet from "@/src/components/InvestigatorSheet";
+import SkillList from "@/src/components/SkillList";
 
 interface PageProps {
 	params: Promise<{

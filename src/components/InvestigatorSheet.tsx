@@ -7,7 +7,7 @@ import CharacterTabs from "./characterTabs";
 import SanityControlModal from "./SanityControlModal";
 
 import { rollD100 } from "../utils/diceLogic";
-import { calculateHP, calculateMP, calculateMaxSanity } from "@/src/utils/rules";
+import { calculateHP, calculateMaxSanity } from "@/src/utils/rules";
 import { Investigator } from "../types/investigator";
 
 import { useState, useRef } from "react";
@@ -21,7 +21,6 @@ export default function InvestigatorSheet({ character }: { character: Investigat
 	const modalRef = useRef<HTMLDialogElement>(null);
 
 	const maxHP = calculateHP(character.characteristics);
-	const maxMP = calculateMP(character.characteristics);
 	const maxSanity = calculateMaxSanity(character.skills);
 
 	const handleSanityChange = (amount: number) => {
