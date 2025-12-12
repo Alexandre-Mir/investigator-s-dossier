@@ -17,7 +17,7 @@ export default function AttributeRoller({ characteristics, onRoll }: Props) {
 	};
 
 	return (
-		<div className="rounded-lg bg-base-100  p-2 grid grid-cols-4 gap-4 place-items-center">
+		<div className="rounded-lg bg-base-100  p-2 grid grid-cols-4 gap-2 place-items-center">
 			{Object.entries(safeCharacteristics).map(([key, value]) => {
 				if (key === "move" || key === "build" || typeof value !== "number") return null;
 

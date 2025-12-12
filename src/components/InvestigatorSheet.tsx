@@ -12,22 +12,29 @@ import { Investigator } from "../types/investigator";
 
 import { useState, useRef } from "react";
 import SanityTracker from "./SanityTracker";
+import useResource from "../hooks/useResource";
 
 export default function InvestigatorSheet({ character }: { character: Investigator }) {
-	const [currentSanity, setCurrentSanity] = useState(character.status.sanity.current);
+	const maxSanity = calculateMaxSanity(character.skills);
+
+	const { value: currentSanity, updateValue } = useResource(
+		character.status.sanity.current,
+		maxSanity,
+		character.id,
+		"SAN"
+	);
 	const [mentalState, setMentalState] = useState("");
 	const [dailyLoss, setDailyLoss] = useState(0);
 
 	const modalRef = useRef<HTMLDialogElement>(null);
 
 	const maxHP = calculateHP(character.characteristics);
-	const maxSanity = calculateMaxSanity(character.skills);
 
 	const handleSanityChange = (amount: number) => {
 		const newSanity = currentSanity - amount;
 		const newDailyLoss = dailyLoss + amount;
 
-		setCurrentSanity(newSanity);
+		updateValue(newSanity);
 		setDailyLoss(newDailyLoss);
 
 		if (newSanity <= 0) {
@@ -71,7 +78,7 @@ export default function InvestigatorSheet({ character }: { character: Investigat
 					max={maxHP}
 				/>
 
-				<div className="flex space-x-2 mt-2 place-items-center">
+				<div className="flex mt-2 gap-x-2 ">
 					<MpDial
 						mpCurrent={character.status.magicPoints.current}
 						mpMax={character.status.magicPoints.max}
