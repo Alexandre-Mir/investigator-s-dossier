@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Dices, Swords, Scroll, X, Crosshair, HandFist } from "lucide-react";
+import { Dices, Swords, Scroll, X, Crosshair, HandFist, History } from "lucide-react";
 import { Investigator, Combat } from "../types/investigator";
 import { rollD100, type RollResult, calculateDamage } from "../utils/diceLogic";
 
@@ -11,6 +11,7 @@ import CharacterBackstory from "./characterBackstory";
 import SkillList from "./SkillList";
 
 import { calculateDamageBonus } from "../utils/rules";
+import RollHistoryList from "./RollHistoryList";
 
 interface TabsProps {
 	character: Investigator;
@@ -18,12 +19,14 @@ interface TabsProps {
 
 const CharacterTabs = ({ character }: TabsProps) => {
 	const [activeTab, setactiveTab] = useState(0);
-
 	const [result, setResult] = useState<RollResult | null>(null);
+	const [rollHistory, setRollHistory] = useState<RollResult[]>([]);
+
 	const modalRef = useRef<HTMLDialogElement>(null);
 
-	const handleGlobalRoll = (rollResult: RollResult) => {
-		setResult(rollResult);
+	const handleGlobalRoll = (newRoll: RollResult) => {
+		setResult(newRoll);
+		setRollHistory([newRoll, ...rollHistory]);
 
 		if (modalRef.current) {
 			modalRef.current.showModal();
@@ -209,6 +212,8 @@ const CharacterTabs = ({ character }: TabsProps) => {
 				)}
 			</div>
 			<SkillList skills={character.skills} onRoll={handleGlobalRoll} />
+
+			<RollHistoryList rollResultArray={rollHistory} />
 
 			<ResultModal ref={modalRef} result={result} />
 		</>

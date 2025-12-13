@@ -33,7 +33,7 @@ export function rollD100(name: string, targetValue: number): RollResult {
 
   } else if (roll <= targetValue) {
     status = "Sucesso!";
-    color = "text-success";
+    color = "text-success ";
   }
 
   return {
