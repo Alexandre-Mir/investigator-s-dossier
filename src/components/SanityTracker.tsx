@@ -16,15 +16,15 @@ export default function SanityTracker({ current, max, initial, onClick }: Props)
 		<div className="relative w-12 h-12" onClick={onClick}>
 			<div
 				className="radial-progress text-warning absolute z-2 inset-0 flex justify-center items-center scale-60 -translate-x-4 -translate-y-4 "
-				style={{ "--value": currentSanity }}
+				style={{ "--value": currentSanity } as React.CSSProperties}
 			></div>
 			<div
 				className="radial-progress text-warning-content absolute inset-0 z-1 flex justify-center items-center scale-60 -translate-x-4 -translate-y-4"
-				style={{ "--value": maxSanity }}
+				style={{ "--value": maxSanity } as React.CSSProperties}
 			></div>
 			<div
 				className="radial-progress text-fuchsia-950 absolute inset-0 flex justify-center items-center scale-60 -translate-x-4 -translate-y-4"
-				style={{ "--value": 100 }}
+				style={{ "--value": 100 } as React.CSSProperties}
 			></div>
 			<div className="absolute inset-0 flex flex-col items-center justify-center text-warning">
 				<Brain />
